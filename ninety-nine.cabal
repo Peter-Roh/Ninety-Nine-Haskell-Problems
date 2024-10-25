@@ -16,6 +16,7 @@ library
                       Problems.P01,
                       Problems.P02,
                       Problems.P03,
+                      Problems.P04,
     build-depends:    base ^>=4.17.2.1,
     default-language: GHC2021
 

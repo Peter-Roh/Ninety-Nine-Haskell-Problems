@@ -1,6 +1,6 @@
 module Main (main) where
 
-import Test.Tasty
+import Test.Tasty ( defaultMain, testGroup, TestTree )
 import Test.Tasty.HUnit
 import Problems
 
@@ -12,7 +12,8 @@ tests = testGroup "Ninety-Nine Problems Tests"
   [
     p1Tests,
     p2Tests,
-    p3Tests
+    p3Tests,
+    p4Tests
   ]
 
 p1Tests :: TestTree
@@ -40,4 +41,13 @@ p3Tests = testGroup "p03"
       elementAt [1, 2, 3] 2 @?= (2 :: Int),
     testCase "Test with a string" $
       elementAt "haskell" 5 @?= 'e'
+  ]
+
+p4Tests :: TestTree
+p4Tests = testGroup "p04"
+  [
+    testCase "Test with a list of integers" $
+      myLength ([123, 456, 789] :: [Integer]) @?= 3,
+    testCase "Test with a string" $
+      myLength "Hello, world!" @?= 13
   ]
