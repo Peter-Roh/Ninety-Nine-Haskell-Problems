@@ -1,0 +1,28 @@
+cabal-version:      3.0
+name:               ninety-nine
+version:            0.1.0.0
+license:            MIT
+license-file:       LICENSE
+author:             Peter-Roh
+maintainer:         minchul.roh.peter@gmail.com
+build-type:         Simple
+
+common warnings
+    ghc-options: -Wall
+
+library
+    hs-source-dirs:   src
+    exposed-modules:  Problems,
+                      Problems.P01,
+                      Problems.P02,
+                      Problems.P03,
+    build-depends:    base ^>=4.17.2.1,
+    default-language: GHC2021
+
+test-suite ninety-nine-test
+    import:           warnings
+    default-language: GHC2021
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Spec.hs
+    build-depends:    base ^>=4.17.2.1, tasty ^>=1.5, tasty-hunit ^>=0.10, ninety-nine
